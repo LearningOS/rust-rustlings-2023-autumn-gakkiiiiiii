@@ -9,7 +9,7 @@
 // Execute `rustlings hint errors6` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 use std::num::ParseIntError;
 
@@ -26,6 +26,9 @@ impl ParsePosNonzeroError {
     }
     // TODO: add another error conversion function here.
     // fn from_parseint...
+    fn from_parsing(err: ParseIntError) -> ParsePosNonzeroError {
+        ParsePosNonzeroError::ParseInt(err)
+    }
 }
 
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
